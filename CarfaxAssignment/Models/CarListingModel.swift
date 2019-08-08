@@ -23,6 +23,7 @@ struct CarModel: Decodable {
     let listPrice: Int
     let year: Int
     let trim: String
+    let id: String
     let images: Images?
     let dealer: Dealer
     
@@ -33,6 +34,7 @@ struct CarModel: Decodable {
         case listPrice
         case year
         case trim
+        case id
         case images
         case dealer
     }

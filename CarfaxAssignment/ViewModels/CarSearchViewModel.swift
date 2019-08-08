@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class CarSearchViewModel {
+    var photoCache: NSCache = NSCache<NSString, UIImage>()
+    
     func getCarListings(completion: @escaping ([CarModel]?) -> ())  {
         if let url = URL(string: "https://carfax-for-consumers.firebaseio.com/assignment.json") {
             CarSearchWorker.getData(url: url) { (data, error) in
