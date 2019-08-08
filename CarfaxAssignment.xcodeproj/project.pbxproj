@@ -17,7 +17,18 @@
 		1D5A231322FB4A3E007B121F /* CarSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5A231122FB4A3E007B121F /* CarSearchTableViewCell.swift */; };
 		1D5A231422FB4A3E007B121F /* CarSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D5A231222FB4A3E007B121F /* CarSearchTableViewCell.xib */; };
 		1D5A231622FB8310007B121F /* CarListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5A231522FB8310007B121F /* CarListingModel.swift */; };
+		1D5A231E22FC178C007B121F /* CarfaxAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5A231D22FC178C007B121F /* CarfaxAssignmentTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D5A232022FC178C007B121F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D5A22E822FB3DE0007B121F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D5A22EF22FB3DE0007B121F;
+			remoteInfo = CarfaxAssignment;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D5A22F022FB3DE0007B121F /* CarfaxAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarfaxAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,10 +43,20 @@
 		1D5A231122FB4A3E007B121F /* CarSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSearchTableViewCell.swift; sourceTree = "<group>"; };
 		1D5A231222FB4A3E007B121F /* CarSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarSearchTableViewCell.xib; sourceTree = "<group>"; };
 		1D5A231522FB8310007B121F /* CarListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListingModel.swift; sourceTree = "<group>"; };
+		1D5A231B22FC178C007B121F /* CarfaxAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarfaxAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D5A231D22FC178C007B121F /* CarfaxAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarfaxAssignmentTests.swift; sourceTree = "<group>"; };
+		1D5A231F22FC178C007B121F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1D5A22ED22FB3DE0007B121F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D5A231822FC178C007B121F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5A22F222FB3DE0007B121F /* CarfaxAssignment */,
+				1D5A231C22FC178C007B121F /* CarfaxAssignmentTests */,
 				1D5A22F122FB3DE0007B121F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5A22F022FB3DE0007B121F /* CarfaxAssignment.app */,
+				1D5A231B22FC178C007B121F /* CarfaxAssignmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +150,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		1D5A231C22FC178C007B121F /* CarfaxAssignmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D5A231D22FC178C007B121F /* CarfaxAssignmentTests.swift */,
+				1D5A231F22FC178C007B121F /* Info.plist */,
+			);
+			path = CarfaxAssignmentTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +179,24 @@
 			productReference = 1D5A22F022FB3DE0007B121F /* CarfaxAssignment.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1D5A231A22FC178C007B121F /* CarfaxAssignmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D5A232222FC178D007B121F /* Build configuration list for PBXNativeTarget "CarfaxAssignmentTests" */;
+			buildPhases = (
+				1D5A231722FC178C007B121F /* Sources */,
+				1D5A231822FC178C007B121F /* Frameworks */,
+				1D5A231922FC178C007B121F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D5A232122FC178C007B121F /* PBXTargetDependency */,
+			);
+			name = CarfaxAssignmentTests;
+			productName = CarfaxAssignmentTests;
+			productReference = 1D5A231B22FC178C007B121F /* CarfaxAssignmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -159,6 +209,10 @@
 				TargetAttributes = {
 					1D5A22EF22FB3DE0007B121F = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					1D5A231A22FC178C007B121F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1D5A22EF22FB3DE0007B121F;
 					};
 				};
 			};
@@ -176,6 +230,7 @@
 			projectRoot = "";
 			targets = (
 				1D5A22EF22FB3DE0007B121F /* CarfaxAssignment */,
+				1D5A231A22FC178C007B121F /* CarfaxAssignmentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -189,6 +244,13 @@
 				1D5A22FB22FB3DE1007B121F /* Assets.xcassets in Resources */,
 				1D5A231422FB4A3E007B121F /* CarSearchTableViewCell.xib in Resources */,
 				1D5A22F922FB3DE0007B121F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D5A231922FC178C007B121F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +270,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D5A231722FC178C007B121F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D5A231E22FC178C007B121F /* CarfaxAssignmentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D5A232122FC178C007B121F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D5A22EF22FB3DE0007B121F /* CarfaxAssignment */;
+			targetProxy = 1D5A232022FC178C007B121F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1D5A22F722FB3DE0007B121F /* Main.storyboard */ = {
@@ -382,6 +460,46 @@
 			};
 			name = Release;
 		};
+		1D5A232322FC178D007B121F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY2H75QD2H;
+				INFOPLIST_FILE = CarfaxAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mfon.CarfaxAssignmentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarfaxAssignment.app/CarfaxAssignment";
+			};
+			name = Debug;
+		};
+		1D5A232422FC178D007B121F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY2H75QD2H;
+				INFOPLIST_FILE = CarfaxAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mfon.CarfaxAssignmentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarfaxAssignment.app/CarfaxAssignment";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -399,6 +517,15 @@
 			buildConfigurations = (
 				1D5A230322FB3DE1007B121F /* Debug */,
 				1D5A230422FB3DE1007B121F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D5A232222FC178D007B121F /* Build configuration list for PBXNativeTarget "CarfaxAssignmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D5A232322FC178D007B121F /* Debug */,
+				1D5A232422FC178D007B121F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
