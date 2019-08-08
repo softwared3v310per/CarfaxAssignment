@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="246" id="KGk-i7-Jjw" customClass="CarSearchTableViewCell" customModule="CarfaxAssignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="246"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="363" height="245.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkf-ra-XYT">
+                        <rect key="frame" x="0.0" y="0.0" width="363" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="T8O-4A-xfY"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1k-PF-PGg">
+                        <rect key="frame" x="16" y="155" width="331" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-IZ-wyE">
+                        <rect key="frame" x="16" y="180.5" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kot-p1-xNt">
+                        <rect key="frame" x="69" y="180.5" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQ6-ol-anu">
+                        <rect key="frame" x="122" y="180.5" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P72-Ar-e1U">
+                        <rect key="frame" x="16" y="210.5" width="331" height="30"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJw-7K-Fm1">
+                        <rect key="frame" x="63" y="177" width="1" height="21"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="jfL-L5-i1y"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJF-m9-jOr">
+                        <rect key="frame" x="116" y="177" width="1" height="21"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="fmr-4t-97V"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rJF-m9-jOr" firstAttribute="top" secondItem="n1k-PF-PGg" secondAttribute="bottom" constant="1.5" id="3bx-hd-rpe"/>
+                    <constraint firstItem="kkf-ra-XYT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6xB-hC-9qJ"/>
+                    <constraint firstItem="Nag-IZ-wyE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="8bG-q3-hxE"/>
+                    <constraint firstItem="rJF-m9-jOr" firstAttribute="leading" secondItem="kot-p1-xNt" secondAttribute="trailing" constant="5" id="CkW-LB-EzH"/>
+                    <constraint firstItem="P72-Ar-e1U" firstAttribute="top" secondItem="Nag-IZ-wyE" secondAttribute="bottom" constant="9.5" id="EMb-pt-dRe"/>
+                    <constraint firstItem="dJw-7K-Fm1" firstAttribute="top" secondItem="n1k-PF-PGg" secondAttribute="bottom" constant="1.5" id="JuO-Vy-Mdt"/>
+                    <constraint firstItem="n1k-PF-PGg" firstAttribute="top" secondItem="kkf-ra-XYT" secondAttribute="bottom" constant="5" id="Mvn-cj-jJc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="n1k-PF-PGg" secondAttribute="trailing" id="O7q-as-Baj"/>
+                    <constraint firstAttribute="bottom" secondItem="P72-Ar-e1U" secondAttribute="bottom" constant="5" id="OqB-Zl-b3g"/>
+                    <constraint firstItem="P72-Ar-e1U" firstAttribute="top" secondItem="dJw-7K-Fm1" secondAttribute="bottom" constant="12.5" id="Q1w-V9-Bc6"/>
+                    <constraint firstItem="dJw-7K-Fm1" firstAttribute="leading" secondItem="Nag-IZ-wyE" secondAttribute="trailing" constant="5" id="Ryf-ob-sxN"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="KQ6-ol-anu" secondAttribute="trailing" constant="5" id="S2O-to-aXb"/>
+                    <constraint firstItem="P72-Ar-e1U" firstAttribute="top" secondItem="kot-p1-xNt" secondAttribute="bottom" constant="9.5" id="Uqg-MG-ypi"/>
+                    <constraint firstAttribute="trailing" secondItem="kkf-ra-XYT" secondAttribute="trailing" id="WV4-6M-GLS"/>
+                    <constraint firstItem="KQ6-ol-anu" firstAttribute="leading" secondItem="rJF-m9-jOr" secondAttribute="trailing" constant="5" id="bh5-yX-brQ"/>
+                    <constraint firstItem="kkf-ra-XYT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bu4-1r-xG5"/>
+                    <constraint firstItem="n1k-PF-PGg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cDC-6m-arl"/>
+                    <constraint firstItem="Nag-IZ-wyE" firstAttribute="top" secondItem="n1k-PF-PGg" secondAttribute="bottom" constant="5" id="dUw-n2-5kq"/>
+                    <constraint firstItem="P72-Ar-e1U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="edp-Ce-CVW"/>
+                    <constraint firstAttribute="trailing" secondItem="P72-Ar-e1U" secondAttribute="trailing" constant="16" id="gcx-1G-IcE"/>
+                    <constraint firstItem="P72-Ar-e1U" firstAttribute="top" secondItem="rJF-m9-jOr" secondAttribute="bottom" constant="12.5" id="jRI-ag-rah"/>
+                    <constraint firstItem="kot-p1-xNt" firstAttribute="leading" secondItem="dJw-7K-Fm1" secondAttribute="trailing" constant="5" id="opZ-wl-vfl"/>
+                    <constraint firstItem="P72-Ar-e1U" firstAttribute="top" secondItem="KQ6-ol-anu" secondAttribute="bottom" constant="9.5" id="vnC-2P-xJE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="callButton" destination="P72-Ar-e1U" id="GcD-2u-0Cj"/>
+                <outlet property="carImageView" destination="kkf-ra-XYT" id="rxm-bF-VsU"/>
+                <outlet property="carModelLabel" destination="n1k-PF-PGg" id="sf6-WC-VJA"/>
+                <outlet property="locationLabel" destination="KQ6-ol-anu" id="kLR-ty-l4u"/>
+                <outlet property="mileageLabel" destination="kot-p1-xNt" id="69Z-ym-nbA"/>
+                <outlet property="priceLabel" destination="Nag-IZ-wyE" id="QUx-w2-E1z"/>
+            </connections>
+            <point key="canvasLocation" x="72.799999999999997" y="86.35682158920541"/>
+        </tableViewCell>
+    </objects>
+</document>
