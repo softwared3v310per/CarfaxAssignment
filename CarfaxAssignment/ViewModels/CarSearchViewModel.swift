@@ -37,4 +37,19 @@ class CarSearchViewModel {
             }
         }
     }
+    
+    func getCarImage(imageURL: String?, id: String, completion: @escaping (UIImage) -> ()) {
+        if let imageURL = imageURL, let url = URL(string: imageURL) {
+            self.getPhotoData(url: url) { photoData in
+                if let photoData = photoData, let photo = UIImage(data: photoData) {
+                    self.photoCache.setObject(photo, forKey: NSString(string: id))
+                    completion(photo)
+                } else {
+                    completion(#imageLiteral(resourceName: "image-not-available"))
+                }
+            }
+        } else {
+            completion( #imageLiteral(resourceName: "image-not-available"))
+        }
+    }
 }

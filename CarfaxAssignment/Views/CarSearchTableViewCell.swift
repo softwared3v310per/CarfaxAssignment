@@ -32,7 +32,7 @@ class CarSearchTableViewCell: UITableViewCell {
         let trim: String = model.trim == "Unspecified" ? "" : model.trim
         self.carModelLabel.text = "\(model.year) \(model.make) \(model.model) \(trim)"
         self.priceLabel.text = "$\(model.listPrice)"
-        self.mileageLabel.text = "\(model.mileage)"
+        self.mileageLabel.text = "\(model.mileage) Mi"
         self.locationLabel.text = "\(model.dealer.city), \(model.dealer.state)"
         self.callButton.setTitle("Call: \(model.dealer.phone)", for: .normal)
     }

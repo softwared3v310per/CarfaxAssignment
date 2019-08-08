@@ -18,6 +18,8 @@
 		1D5A231422FB4A3E007B121F /* CarSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D5A231222FB4A3E007B121F /* CarSearchTableViewCell.xib */; };
 		1D5A231622FB8310007B121F /* CarListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5A231522FB8310007B121F /* CarListingModel.swift */; };
 		1D5A231E22FC178C007B121F /* CarfaxAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5A231D22FC178C007B121F /* CarfaxAssignmentTests.swift */; };
+		1D5A232722FC1D38007B121F /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5A232522FC1D38007B121F /* IntroViewController.swift */; };
+		1D5A232822FC1D38007B121F /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D5A232622FC1D38007B121F /* IntroViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		1D5A231B22FC178C007B121F /* CarfaxAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarfaxAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5A231D22FC178C007B121F /* CarfaxAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarfaxAssignmentTests.swift; sourceTree = "<group>"; };
 		1D5A231F22FC178C007B121F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D5A232522FC1D38007B121F /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		1D5A232622FC1D38007B121F /* IntroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5A230B22FB451E007B121F /* CarSearchViewController.swift */,
+				1D5A232522FC1D38007B121F /* IntroViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5A22F722FB3DE0007B121F /* Main.storyboard */,
+				1D5A232622FC1D38007B121F /* IntroViewController.xib */,
 				1D5A22FC22FB3DE1007B121F /* LaunchScreen.storyboard */,
 				1D5A231122FB4A3E007B121F /* CarSearchTableViewCell.swift */,
 				1D5A231222FB4A3E007B121F /* CarSearchTableViewCell.xib */,
@@ -241,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D5A22FE22FB3DE1007B121F /* LaunchScreen.storyboard in Resources */,
+				1D5A232822FC1D38007B121F /* IntroViewController.xib in Resources */,
 				1D5A22FB22FB3DE1007B121F /* Assets.xcassets in Resources */,
 				1D5A231422FB4A3E007B121F /* CarSearchTableViewCell.xib in Resources */,
 				1D5A22F922FB3DE0007B121F /* Main.storyboard in Resources */,
@@ -263,6 +270,7 @@
 			files = (
 				1D5A231322FB4A3E007B121F /* CarSearchTableViewCell.swift in Sources */,
 				1D5A231622FB8310007B121F /* CarListingModel.swift in Sources */,
+				1D5A232722FC1D38007B121F /* IntroViewController.swift in Sources */,
 				1D5A22F422FB3DE0007B121F /* AppDelegate.swift in Sources */,
 				1D5A230C22FB451E007B121F /* CarSearchViewController.swift in Sources */,
 				1D5A231022FB4A1D007B121F /* CarSearchWorker.swift in Sources */,
