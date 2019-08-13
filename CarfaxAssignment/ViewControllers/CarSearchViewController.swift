@@ -25,15 +25,11 @@ class CarSearchViewController: UIViewController {
         self.carTableView.dataSource = self
         self.carTableView.delegate = self
         self.carTableView.register(UINib(nibName: CarSearchTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CarSearchTableViewCell.nibName)
-        self.viewModel.getCarListings { carModels in
+        self.viewModel.getCarListings { [weak self] carModels in
             DispatchQueue.main.async {
-                self.carListings = carModels
+                self?.carListings = carModels
             }
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.setupAnimation()
     }
     
