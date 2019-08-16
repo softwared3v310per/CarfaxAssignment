@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol CarSearchTableViewCellDelegate: class {
+    func makeCall(url: URL)
+}
+
 class CarSearchTableViewCell: UITableViewCell {
+    
+    weak var delegate: CarSearchTableViewCellDelegate?
 
     @IBOutlet weak var carImageView: UIImageView!
     
@@ -40,11 +46,7 @@ class CarSearchTableViewCell: UITableViewCell {
     @objc func makeCall() {
         guard let phoneNum = self.callButton.currentTitle?.components(separatedBy: " ").last else { return }
         if let url = URL(string: "tel://\(phoneNum)"), UIApplication.shared.canOpenURL(url) {
-            if #available(iOS 10, *) {
-                UIApplication.shared.open(url)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
+            self.delegate?.makeCall(url: url)
         }
     }
 }

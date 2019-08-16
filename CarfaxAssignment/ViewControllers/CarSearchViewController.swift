@@ -22,6 +22,7 @@ class CarSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Car Listings"
         self.carTableView.dataSource = self
         self.carTableView.delegate = self
         self.carTableView.register(UINib(nibName: CarSearchTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CarSearchTableViewCell.nibName)
@@ -31,6 +32,13 @@ class CarSearchViewController: UIViewController {
             }
         }
         self.setupAnimation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
+        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        self.setNeedsStatusBarAppearanceUpdate()
     }
     
     func setupAnimation() {
@@ -54,7 +62,7 @@ extension CarSearchViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CarSearchTableViewCell.nibName, for: indexPath) as? CarSearchTableViewCell, let carListings = self.carListings else {
             return UITableViewCell()
         }
-        
+        cell.delegate = self
         cell.configure(model: carListings[indexPath.row])
         if let photo = self.viewModel.photoCache.object(forKey: NSString(string: carListings[indexPath.row].id)) {
             cell.carImageView.image = photo
@@ -73,5 +81,11 @@ extension CarSearchViewController: UITableViewDataSource {
 extension CarSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension CarSearchViewController: CarSearchTableViewCellDelegate {
+    func makeCall(url: URL) {
+        UIApplication.shared.open(url)
     }
 }
