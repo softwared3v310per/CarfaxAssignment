@@ -5,7 +5,7 @@
 //  Created by Mbah Fonong on 8/7/19.
 //  Copyright © 2019 Mbah Fonong. All rights reserved.
 //
-
+import Alamofire
 import Foundation
 
 class CarSearchWorker {
@@ -19,6 +19,16 @@ class CarSearchWorker {
                 completion(nil, error)
             }
         }.resume()
+    }
+    
+    static func getDataAF(url: URL, completion: @escaping (Data?, Error?) -> ()) {
+        AF.request(url).responseJSON { dataResponse in
+            if let data = dataResponse.data {
+                completion(data, nil)
+            } else {
+                completion(nil, dataResponse.error)
+            }
+        }
     }
     
     static func parseData(data: Data) -> CarListingModel? {

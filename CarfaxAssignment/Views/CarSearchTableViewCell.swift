@@ -5,7 +5,7 @@
 //  Created by Mbah Fonong on 8/7/19.
 //  Copyright © 2019 Mbah Fonong. All rights reserved.
 //
-
+import RealmSwift
 import UIKit
 
 protocol CarSearchTableViewCellDelegate: class {
@@ -35,12 +35,24 @@ class CarSearchTableViewCell: UITableViewCell {
     static let nibName: String = "CarSearchTableViewCell"
     
     func configure(model: CarModel) {
-        let trim: String = model.trim == "Unspecified" ? "" : model.trim
+        let trim: String = model.trim == "\(CommonStrings.unspecified)" ? "" : model.trim
         self.carModelLabel.text = "\(model.year) \(model.make) \(model.model) \(trim)"
         self.priceLabel.text = "$\(model.listPrice)"
-        self.mileageLabel.text = "\(model.mileage) Mi"
+        self.mileageLabel.text = "\(model.mileage) \(CommonStrings.mileage)"
         self.locationLabel.text = "\(model.dealer.city), \(model.dealer.state)"
-        self.callButton.setTitle("Call: \(model.dealer.phone)", for: .normal)
+        self.callButton.setTitle("\(CommonStrings.call): \(model.dealer.phone)", for: .normal)
+    }
+    
+    func configure(model: SavedListingModel) {
+        if let imageData = model.carImage {
+            self.carImageView.image = UIImage(data: imageData)
+        }
+        let trim: String = model.trim == "\(CommonStrings.unspecified)" ? "" : model.trim
+        self.carModelLabel.text = "\(model.year) \(model.make) \(model.model) \(trim)"
+        self.priceLabel.text = "$\(model.price)"
+        self.mileageLabel.text = "\(model.mileage) \(CommonStrings.mileage)"
+        self.locationLabel.text = "\(model.location)"
+        self.callButton.setTitle("\(CommonStrings.call): \(model.phone)", for: .normal)
     }
     
     @objc func makeCall() {

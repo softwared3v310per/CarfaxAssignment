@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y2d-6G-fVI">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y2d-6G-fVI">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CarSearchViewController" customModule="CarfaxAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U84-Xe-qOF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -32,8 +32,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="s2f-ab-3NM"/>
+                    <navigationItem key="navigationItem" id="s2f-ab-3NM">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="tm8-Fp-wjA">
+                            <connections>
+                                <segue destination="A5a-cW-ert" kind="show" id="Hte-vw-Zm1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="carListingButton" destination="tm8-Fp-wjA" id="prw-L4-KPe"/>
                         <outlet property="carTableView" destination="U84-Xe-qOF" id="n5T-VY-MQx"/>
                     </connections>
                 </viewController>
@@ -41,17 +48,55 @@
             </objects>
             <point key="canvasLocation" x="1088.8" y="63.418290854572717"/>
         </scene>
+        <!--Your Cars View Controller-->
+        <scene sceneID="6II-2w-qE7">
+            <objects>
+                <viewController storyboardIdentifier="YourCarsViewController" id="A5a-cW-ert" customClass="YourCarsViewController" customModule="CarfaxAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WeU-hI-3gM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQ1-zw-cVi">
+                                <rect key="frame" x="207" y="368" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jgz-yA-NtC">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dQ1-zw-cVi" firstAttribute="centerX" secondItem="WeU-hI-3gM" secondAttribute="centerX" id="8eb-Za-gu9"/>
+                            <constraint firstItem="Jgz-yA-NtC" firstAttribute="top" secondItem="4ww-5a-9Jd" secondAttribute="top" id="Mif-DZ-H0G"/>
+                            <constraint firstItem="4ww-5a-9Jd" firstAttribute="trailing" secondItem="Jgz-yA-NtC" secondAttribute="trailing" id="YJf-22-1PZ"/>
+                            <constraint firstItem="Jgz-yA-NtC" firstAttribute="leading" secondItem="4ww-5a-9Jd" secondAttribute="leading" id="fuY-PA-YJt"/>
+                            <constraint firstItem="Jgz-yA-NtC" firstAttribute="bottom" secondItem="4ww-5a-9Jd" secondAttribute="bottom" id="h8h-2c-DhW"/>
+                            <constraint firstItem="dQ1-zw-cVi" firstAttribute="centerY" secondItem="WeU-hI-3gM" secondAttribute="centerY" id="hdU-o9-7JQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4ww-5a-9Jd"/>
+                    </view>
+                    <connections>
+                        <outlet property="noCarsLabel" destination="dQ1-zw-cVi" id="nZK-df-SxY"/>
+                        <outlet property="savedCarsTableView" destination="Jgz-yA-NtC" id="0aG-5L-xeP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YxQ-k3-F2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928.985507246377" y="62.771739130434788"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="1s3-Qa-pxn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y2d-6G-fVI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GTU-Pi-QLz">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.42501056279999999" green="0.75078740840000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

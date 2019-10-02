@@ -12,16 +12,9 @@ import XCTest
 class CarfaxAssignmentTests: XCTestCase {
 
     let viewModel = CarSearchViewModel()
+    let yourCarsViewModel = YourCarsViewModel()
     let testPhoto = URL(string: "https://carfax-img.vast.com/carfax/-9050308143659109979/1/344x258")!
     
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testJSONEndpoint() {
         let expectation = XCTestExpectation(description: "JSON Endpoint")
         self.viewModel.getCarListings { carmodels in
@@ -47,5 +40,18 @@ class CarfaxAssignmentTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 3)
     }
+    
+    func testRealmSaveAndDelete() {
+        let initialCount = self.yourCarsViewModel.fetchListings()?.count ?? 0
+        
+        let dummyCar = CarModel(make: "make", model: "model", mileage: 0, listPrice: 0, year: 2015, trim: "trim", id: "555", images: nil, dealer: Dealer(city: "Seattle", state: "Washington", phone: "0"))
 
+        self.viewModel.saveListing(model: dummyCar, imageData: Data())
+        let newCount = self.yourCarsViewModel.fetchListings()?.count ?? 0
+        XCTAssertEqual(newCount, initialCount + 1)
+        
+        self.yourCarsViewModel.deleteListing(id: "555")
+        let adjustedCount = self.yourCarsViewModel.fetchListings()?.count ?? 0
+        XCTAssertEqual(adjustedCount, initialCount)
+    }
 }

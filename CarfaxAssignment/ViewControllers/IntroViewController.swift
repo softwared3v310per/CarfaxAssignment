@@ -25,7 +25,7 @@ class IntroViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
         self.foxLogoImageView.image = #imageLiteral(resourceName: "carfaxLogo")
-        self.welcomeLabel.text = "Welcome To Carfax"
+        self.welcomeLabel.text = CommonStrings.welcome
         self.introStackView.isHidden = true
     }
     

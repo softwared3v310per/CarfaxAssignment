@@ -20,9 +20,15 @@ class CarSearchViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var carListingButton: UIBarButtonItem! {
+        didSet {
+            carListingButton.title = CommonStrings.yourCars
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Car Listings"
+        self.navigationItem.title = CommonStrings.listings
         self.carTableView.dataSource = self
         self.carTableView.delegate = self
         self.carTableView.register(UINib(nibName: CarSearchTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CarSearchTableViewCell.nibName)
@@ -33,13 +39,7 @@ class CarSearchViewController: UIViewController {
         }
         self.setupAnimation()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.barStyle = .blackTranslucent
-        self.navigationController?.navigationBar.barTintColor = UIColor.red
-        self.setNeedsStatusBarAppearanceUpdate()
-    }
+
     
     func setupAnimation() {
         let introVC = IntroViewController(nibName: IntroViewController.nibName, bundle: nil)
@@ -63,6 +63,7 @@ extension CarSearchViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.delegate = self
+        cell.selectionStyle = .none
         cell.configure(model: carListings[indexPath.row])
         if let photo = self.viewModel.photoCache.object(forKey: NSString(string: carListings[indexPath.row].id)) {
             cell.carImageView.image = photo
@@ -79,6 +80,22 @@ extension CarSearchViewController: UITableViewDataSource {
 }
 
 extension CarSearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let bookmark = UITableViewRowAction(style: .normal, title: CommonStrings.save) { (_, indexPath) in
+            if let listing = self.carListings?[indexPath.row], let carCell = tableView.cellForRow(at: indexPath) as? CarSearchTableViewCell, let data = carCell.carImageView.image?.pngData() {
+               self.viewModel.saveListing(model: listing, imageData: data)
+            }
+        }
+        
+        bookmark.backgroundColor = UIColor.blue
+        return [bookmark]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

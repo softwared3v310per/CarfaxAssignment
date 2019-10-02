@@ -7,14 +7,25 @@
 //
 
 import Foundation
+import RealmSwift
 import UIKit
 
 class CarSearchViewModel {
     var photoCache: NSCache = NSCache<NSString, UIImage>()
     
+    var realm: Realm? {
+        do {
+            let realm = try Realm()
+            return realm
+        } catch let error {
+            print("Error in creating realm: \(error)")
+            return nil
+        }
+    }
+    
     func getCarListings(completion: @escaping ([CarModel]?) -> ())  {
-        if let url = URL(string: "https://carfax-for-consumers.firebaseio.com/assignment.json") {
-            CarSearchWorker.getData(url: url) { (data, error) in
+        if let url = URL(string: CommonStrings.carfaxURL) {
+            CarSearchWorker.getDataAF(url: url) { (data, error) in
                 if let data = data, let carModels = CarSearchWorker.parseData(data: data) {
                     completion(carModels.listings)
                 } else {
@@ -23,7 +34,7 @@ class CarSearchViewModel {
                 }
             }
         } else {
-            print("Invalid URL")
+            print(CommonStrings.invalid)
             completion(nil)
         }
     }
@@ -50,6 +61,28 @@ class CarSearchViewModel {
             }
         } else {
             completion( #imageLiteral(resourceName: "image-not-available"))
+        }
+    }
+    
+    func saveListing(model: CarModel, imageData: Data) {
+        guard let realm = self.realm else { print("Cannot get realm"); return }
+        let savedCar = SavedListingModel()
+        savedCar.price = "\(model.listPrice)"
+        savedCar.location = "\(model.dealer.city), \(model.dealer.state)"
+        savedCar.mileage = "\(model.mileage)"
+        savedCar.model = model.model
+        savedCar.id = model.id
+        savedCar.trim = model.trim
+        savedCar.phone = model.dealer.phone
+        savedCar.make = model.make
+        savedCar.year = "\(model.year)"
+        savedCar.carImage = imageData
+        do {
+            try realm.write {
+                realm.add(savedCar)
+            }
+        } catch let error as NSError {
+            print("Error in saving to realm:\(error)")
         }
     }
 }
